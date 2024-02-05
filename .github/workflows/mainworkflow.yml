@@ -3,6 +3,6 @@ run-name: ${{ github.actor }} is runnoing all the workflows
 on: [workflow_dispatch]
 jobs:
     run-demo-one:
-      uses: ./.github/workflows/demo-one.yml@main
+      uses: ./.github/workflows/demo-one.yml
     run-demo-two:
-      uses: ./.github/workflows/demo-two.yml@main
+      uses: ./.github/workflows/demo-two.yml
