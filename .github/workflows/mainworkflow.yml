@@ -1,0 +1,8 @@
+name: learn-github-reusable-workflow
+run-name: ${{ github.actor }} is runnoing all the workflows
+on: [workflow_dispatch]
+jobs:
+    run-demo-one:
+      uses: ./demo-one.yml
+    run-demo-two:
+      uses: ./demo-two.yml
