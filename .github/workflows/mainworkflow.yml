@@ -1,5 +1,5 @@
-name: learn-github-reusable-workflow
-run-name: ${{ github.actor }} is runnoing all the workflows
+name: Main Action Run Both Demos
+run-name: ${{ github.actor }} is running all the workflows
 on: [workflow_dispatch]
 jobs:
     run-demo-one:
