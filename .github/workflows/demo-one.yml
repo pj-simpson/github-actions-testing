@@ -1,13 +1,19 @@
 name: Github Actions Demo 2
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [workflow_dispatch,workflow_call]
+'on':
+  workflow_dispatch:
+  workflow_call:
+      secrets:
+        peter_silly_secret:
+          description: Peter Testing Secret
+          required: true
+          
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
+  print-secret:
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.PETER_SILLY_SECRET }}
+        run: |
+          echo "$SUPER_SECRET"
